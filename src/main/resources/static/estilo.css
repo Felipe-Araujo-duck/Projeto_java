@@ -1,0 +1,244 @@
+/* RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1.5; /* Aumentei a altura da linha para melhor legibilidade */
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    width: inherit;
+    border-radius: 8px; /* Adicionei bordas arredondadas nas imagens */
+}
+
+button {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
+    padding: 0;
+    border: none;
+    background-color: unset;
+    cursor: pointer; /* Adicionei cursor de pointer para botões */
+}
+
+input, textarea, select {
+    border: none;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    border-radius: 12px; /* Borda arredondada para inputs */
+    padding: 10px; /* Adicionei padding para inputs */
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none; /* Remove outline padrão */
+    box-shadow: 0 0 5px var(--roxo-escuro); /* Efeito de sombra ao focar */
+}
+
+*,
+*::before,
+*::after {
+    --roxo-escuro: #5D2A91; /* Cor alterada */
+    --roxo-medio: #9B66D6; /* Cor alterada */
+    --roxo-claro: #E9D5F0; /* Cor alterada */
+    --cinza-texto: #333333; /* Cor alterada */
+    --cinza-claro: #F0F0F0; /* Cor alterada */
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    background-color: var(--roxo-claro);
+    font-size: 14px;
+    color: var(--cinza-texto);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* NAVBAR */
+nav {
+    background-color: var(--roxo-medio);
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4em;
+    padding: 0 2em;
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para a navbar */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin: 0 1.5em;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--roxo-claro);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s ease; /* Transição para hover */
+}
+
+nav a:hover {
+    color: var(--roxo-escuro);
+}
+
+div > a {
+    color: var(--roxo-escuro);
+    text-decoration: underline;
+    font-size: 18px;
+    margin: 10px;
+    display: inline-block;
+}
+
+/* TABELA */
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+th {
+    background-color: var(--roxo-escuro);
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    text-align: center;
+    border-bottom: 2px solid var(--cinza-claro); /* Linha inferior para cabeçalhos */
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid var(--cinza-claro);
+    transition: background 0.3s ease; /* Transição suave para linha da tabela */
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Efeito ao passar o mouse */
+}
+
+td a {
+    text-decoration: underline;
+    margin: 0 20px;
+    padding-top: 15px;
+}
+
+td > form {
+    display: inline;
+}
+
+/* FORM */
+div > form {
+    margin: 3em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: initial;
+}
+
+form div {
+    margin: 1em;
+    font-size: 1.6em;
+}
+
+h1 {
+    color: var(--roxo-medio);
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin: 20px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra de texto para o título */
+}
+
+form div input {
+    width: 50vw;
+    border-radius: 24px;
+    display: block;
+    color: black;
+    padding: 1em;
+}
+
+label {
+    line-height: 1.5;
+    padding: 0 0 .1em 1em;
+    font-weight: 700;
+    color: var(--roxo-medio);
+}
+
+input[type="submit"] {
+    background-color: var(--roxo-escuro);
+    color: white; /* Mudei para branco para contraste */
+    border: none;
+    border-radius: 24px;
+    padding: 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease; /* Transição suave */
+}
+
+input[type="submit"]:hover {
+    background-color: var(--roxo-claro); /* Mudança de cor ao passar o mouse */
+}
