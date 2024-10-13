@@ -16,16 +16,23 @@
 <div layout:fragment="conteudo">
     <h1>Cadastro de Carros</h1>
 
-    <form method="POST">
-        <label for="nome">Nome do Carro:</label>
-        <input type="text" id="nome" name="nome" required>
+    <form th:action="@{'/carros/modelos'}" method="POST">
+        <input type="hidden" name="_method" value="put" th:if="${carrosDTO!=null}">
+        <input type="hidden" name="id" th:value="${carrosDTO?.id}">
 
-        <label for="modelo">Modelo:</label>
-        <input type="text" id="modelo" name="modelo" required>
+        <div>
+            <label for="nome">Nome do Carro:</label>
+            <input type="text" id="nome" name="nome" th:value="${carrosDTO?.nome}" required>
 
-        <input type="submit" value="Cadastrar Carro">
+        </div>
+
+        <div>
+            <label for="modelo">Modelo:</label>
+            <input type="text" id="modelo" name="modelo" th:value="${carrosDTO?.modelo}" required>
+        </div>
+
+        <input type="submit" th:value="${carrosDTO == null ? 'Cadastrar Carro' : 'Atualizar Carro'}">
     </form>
-
 
 </div>
 

@@ -14,10 +14,19 @@
         <tr>
           <th>Nome</th>
           <th>Modelo</th>
+          <th>Ações</th>
         </tr>
         <tr th:each="carrosDTO : ${lista}">
           <td th:text="${carrosDTO.nome}"></td>
           <td th:text="${carrosDTO.modelo}"></td>
+          <td>
+            <a th:href="@{/carros/modelos?id={id}(id=${carrosDTO.id})}">Editar</a>
+            <form action="/carros" method="post">
+              <input type="hidden" name="_method" value="delete" />
+              <input type="hidden" name="id" th:value="${carrosDTO.id}"/>
+              <input type="submit" value="Excluir" />
+            </form>
+          </td>
         </tr>
       </table>
     </div>

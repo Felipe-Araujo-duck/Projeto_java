@@ -31,6 +31,9 @@ public class CarrosDTO {
         this.modelo = dados.modelo();
     }
 
-
+    public void atualizaDados(DadosAlteracaoCarros dados){
+        this.nome = dados.nome();
+        this.modelo = dados.modelo();
+    }
 
 }
