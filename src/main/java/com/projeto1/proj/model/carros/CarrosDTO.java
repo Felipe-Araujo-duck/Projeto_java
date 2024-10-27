@@ -1,18 +1,21 @@
 package com.projeto1.proj.model.carros;
 
+import com.projeto1.proj.model.modelos.ModelosDTO;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="filmesDTO")
+@Table(name="carrosDTO")
 public class CarrosDTO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
     private String nome;
-    private String modelo;
+    @ManyToOne
+    @JoinColumn(name = "idModelo")
+    private ModelosDTO modelo;
 
-    public String getModelo() {
+    public ModelosDTO getModelo() {
         return modelo;
     }
 

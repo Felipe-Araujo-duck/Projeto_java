@@ -1,4 +1,6 @@
 package com.projeto1.proj.model.carros;
 
-public record DadosAlteracaoCarros(Long id, String nome, String modelo) {
+import com.projeto1.proj.model.modelos.ModelosDTO;
+
+public record DadosAlteracaoCarros(Long id, String nome, ModelosDTO modelo) {
 }

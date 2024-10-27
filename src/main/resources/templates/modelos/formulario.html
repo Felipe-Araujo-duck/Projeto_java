@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro de Modelo</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div layout:fragment="conteudo">
+    <h1>Cadastro de Modelo</h1>
+
+    <form th:action="@{'/modelos/formulario'}" method="POST">
+        <input type="hidden" name="_method" value="put" th:if="${modelosDTO!=null}">
+        <input type="hidden" name="id" th:value="${modelosDTO?.idModelo}">
+
+        <div>
+            <label for="nomeModelo">Nome do Modelo:</label>
+            <input type="text" id="nomeModelo" name="nomeModelo" th:value="${modelosDTO?.nomeModelo}" required>
+
+        </div>
+
+        <input type="submit" th:value="${modelosDTO == null ? 'Cadastrar Modelo' : 'Atualizar Modelo'}">
+    </form>
+</div>
+
+
+</body>
+</html>

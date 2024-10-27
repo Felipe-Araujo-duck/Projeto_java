@@ -28,7 +28,13 @@
 
         <div>
             <label for="modelo">Modelo:</label>
-            <input type="text" id="modelo" name="modelo" th:value="${carrosDTO?.modelo}" required>
+            <select id="modelo" name="modelo">
+                <option value="">Selecione um modelo</option>
+                <th:block th:each="gen : ${listaModelos}">
+                    <option th:value="${gen.idModelo}"
+                            th:text="${gen.nomeModelo}"></option>
+                </th:block>
+            </select>
         </div>
 
         <input type="submit" th:value="${carrosDTO == null ? 'Cadastrar Carro' : 'Atualizar Carro'}">

@@ -4,6 +4,7 @@ import com.projeto1.proj.model.carros.CadastraCarros;
 import com.projeto1.proj.model.carros.CarrosDTO;
 import com.projeto1.proj.model.carros.CarrosRepository;
 import com.projeto1.proj.model.carros.DadosAlteracaoCarros;
+import com.projeto1.proj.model.modelos.ModelosRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,12 +18,17 @@ public class CarrosController {
     @Autowired
     private CarrosRepository repository;
 
+    @Autowired
+    private ModelosRepository repositoryModelo;
+
     @GetMapping("/modelos")
     public String carregaCarros(Long id, Model model){
         if(id != null){
             CarrosDTO C1 = repository.getReferenceById(id);
             model.addAttribute("carrosDTO", C1);
         }
+
+        model.addAttribute("listaModelos", repositoryModelo.findAll());
         return "/carros/modelos";
     }
 
@@ -31,7 +37,7 @@ public class CarrosController {
     {
         CarrosDTO F1 = new CarrosDTO(dados);
         repository.save(F1);
-        return "redirect:/carros/listagem";
+        return "redirect:/carros/lista";
     }
 
     @PutMapping("/modelos")

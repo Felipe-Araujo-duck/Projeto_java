@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+<div layout:fragment="conteudo">
+    <h1>Lista de Modelos</h1>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Ações</th>
+        </tr>
+        <tr th:each="modelosDTO : ${lista}">
+            <td th:text="${modelosDTO.nomeModelo}"></td>
+            <td>
+                <a th:href="@{/modelos/formulario?id={id}(id=${modelosDTO.idModelo})}">Editar</a>
+                <form action="/modelos" method="post">
+                    <input type="hidden" name="_method" value="delete" />
+                    <input type="hidden" name="id" th:value="${modelosDTO.idModelo}"/>
+                    <input type="submit" value="Excluir" />
+                </form>
+            </td>
+        </tr>
+    </table>
+
+    <a href="/modelos/formulario">Novo</a>
+</div>
+
+</body>
+</html>
